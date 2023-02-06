@@ -1,1 +1,1 @@
-# Geospatial-Analysis-of-NexRad-and-GOES-satellite
+# Geospatial-Analysis-of-NexRad-and-GEOS-satellite
