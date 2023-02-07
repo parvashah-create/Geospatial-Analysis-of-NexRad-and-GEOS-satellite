@@ -6,32 +6,12 @@ technical documentation.
 """
 
 import boto3
-import json
-
 s3 = boto3.resource("s3")
-bucket = s3.Bucket("noaa-goes18")
+my_bucket = s3.Bucket('noaa-goes18')
 
+f = open('GEOS.txt', 'w')
+for my_bucket_object in my_bucket.objects.all().filter(Prefix="ABI-L1b-RadC/"):
+    f.write(my_bucket_object.key + '\n')
+    print(my_bucket_object.key)
 
-def list_files(bucket, prefix=""):
-    result = {"name": prefix, "children": []}
-
-    for obj in bucket.objects.filter(Prefix=prefix):
-        parts = obj.key.split("/")
-
-        if len(parts) > 1:
-            folder = parts[0]
-            file_name = parts[-1]
-
-            subfolder = next((item for item in result["children"] if item["name"] == folder), None)
-            if subfolder is None:
-                subfolder = {"name": folder, "children": []}
-                result["children"].append(subfolder)
-
-            subfolder["children"].append({"name": file_name})
-
-    return result
-
-
-result = list_files(bucket)
-with open("s3_files.json", "w") as f:
-    f.write(json.dumps(result, indent=4))
+f.close()

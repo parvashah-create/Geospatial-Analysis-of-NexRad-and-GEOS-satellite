@@ -18,7 +18,10 @@ def convert_to_json(filename):
             if part not in curr:
                 curr[part] = {}
             curr = curr[part]
-    return json.dumps(data, indent=4)
+
+    json_file = open("NexRad.json", "w")
+    json.dump(data, json_file, indent=6)
+    json_file.close()
 
 
-print(convert_to_json("text_file.txt"))
+convert_to_json("NexRad.txt")
