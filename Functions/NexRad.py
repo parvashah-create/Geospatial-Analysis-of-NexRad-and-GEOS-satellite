@@ -9,7 +9,7 @@ import boto3
 s3 = boto3.client('s3')
 
 
-def list_directories(bucket_name, prefix="2023", depth=0):
+def list_directories(bucket_name, prefix="2022", depth=0):
     directories = []
     paginator = s3.get_paginator("list_objects_v2")
     for result in paginator.paginate(Bucket=bucket_name, Delimiter='/', Prefix=prefix):
