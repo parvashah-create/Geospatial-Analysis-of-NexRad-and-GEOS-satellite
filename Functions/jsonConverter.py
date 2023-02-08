@@ -24,4 +24,4 @@ def convert_to_json(filename):
     json_file.close()
 
 
-convert_to_json("NexRad.txt")
+convert_to_json("GEOS.txt")
