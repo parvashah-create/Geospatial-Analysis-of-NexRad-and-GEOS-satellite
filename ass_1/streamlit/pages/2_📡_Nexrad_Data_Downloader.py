@@ -8,8 +8,8 @@ import sqlite3
 
 def extract_files(bucket_name, prefix):
     s3 = boto3.resource('s3',
-         aws_access_key_id="AKIAWFZMBX3FS5T6CQ4I",
-         aws_secret_access_key= "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")
+         aws_access_key_id="",
+         aws_secret_access_key= "")
     result = []
     bucket = s3.Bucket(bucket_name)
     for obj in bucket.objects.filter(Prefix=prefix):
