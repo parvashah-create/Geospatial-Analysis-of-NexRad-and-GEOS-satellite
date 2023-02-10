@@ -6,7 +6,6 @@ import datetime
 import sqlite3
 import io
 import webbrowser
-import s3fs
 import os
 
 
