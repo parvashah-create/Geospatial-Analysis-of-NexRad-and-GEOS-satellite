@@ -139,7 +139,7 @@ def search_by_path():
         
     st.dataframe(st.session_state['log_df'])
 
-connection = sqlite3.connect("../streamlit/meta_data.db")
+connection = sqlite3.connect("../meta_data.db")
 cursor = connection.cursor()
 
 
