@@ -9,7 +9,7 @@ import pandas as pd
 # )
 
 st.write("# Nexrad Locations in USA 📍")
-df = pd.read_csv('/Users/parvashah/Documents/damg_7245/ass_1/streamlit/nexrad_loc.csv')
+df = pd.read_csv('./nexrad_loc.csv')
 df['text'] = 'City: ' + df['City'] + ', ' + 'State: '+ df["State"] + ', ' + 'Identifier: ' + df['ICAO Location Identifier'].astype(str)
 
 
