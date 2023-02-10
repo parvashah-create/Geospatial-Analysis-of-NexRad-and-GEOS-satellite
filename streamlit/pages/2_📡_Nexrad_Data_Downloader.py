@@ -136,7 +136,7 @@ def search_by_filename():
         link = link_gen(filename_input)
     st.write("Link: {}".format(link))
 
-connection = sqlite3.connect("../meta_data.db")
+connection = sqlite3.connect("./meta_data.db")
 cursor = connection.cursor()
 
 st.write("# NexRad Data Downloader 📡")
