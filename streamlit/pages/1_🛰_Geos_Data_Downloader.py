@@ -154,6 +154,6 @@ if search_method == "Search by Path":
     search_by_path()
 if search_method == "Search by Filename":
     search_by_filename()
-
+print("Log works")
    
 
