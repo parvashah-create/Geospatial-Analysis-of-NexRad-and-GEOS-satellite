@@ -68,7 +68,7 @@ def url_gen(input):
 def download_file(name,path):
     st.write("Downloading.....")
     url = upload_file_to_s3(name,path,"noaa-goes18","the-data-guys")
-    print(url)
+    st.write(url)
     webbrowser.open_new_tab(url)
     st.write("Done.")
 # this function displays input_boxes for search by filename method
@@ -154,6 +154,6 @@ if search_method == "Search by Path":
     search_by_path()
 if search_method == "Search by Filename":
     search_by_filename()
-print("Log works")
+
    
 
