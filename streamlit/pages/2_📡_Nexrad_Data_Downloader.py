@@ -67,6 +67,7 @@ def link_gen(input):
 def download_file(name,path):
     st.write("Downloading.....")
     url = upload_file_to_s3(name,path,"noaa-nexrad-level2","the-data-guys")
+    st.write(url)
     st.write("Done.")
 # this function displays input_boxes for search by filename method
 
