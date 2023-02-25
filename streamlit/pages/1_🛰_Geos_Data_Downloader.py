@@ -38,12 +38,12 @@ def upload_file_to_s3(file_name, prefix, source_bucket_name, target_bucket_name)
     # Upload the content of the file to the target object
     target_object.upload_fileobj(io.BytesIO(file_content))
     # Print a message indicating that the file has been uploaded
-    print(f"File {file_name} with prefix {prefix} uploaded to S3 bucket {target_bucket_name}.")
+    check = "File {file_name} with prefix {prefix} uploaded to S3 bucket {target_bucket_name}."
 
     # Return link to uploaded file
     # Construct the URL of the uploaded file
     uploaded_file_url = f"https://{target_bucket_name}.s3.amazonaws.com/{file_name}"
-    return uploaded_file_url
+    return check
 # function extract files from s3 bucket
 def extract_files(bucket_name, prefix):
     s3 = boto3.resource('s3')
